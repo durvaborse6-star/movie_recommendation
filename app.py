@@ -6,8 +6,8 @@ import pandas as pd
 from difflib import get_close_matches  # ✅ Make sure this is here!
 
 # Load saved data
-movies_dict = pickle.load(open('movies_dict.pkl', 'rb'))
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+movies_dict = pickle.load(open('data/movies_dict.pkl', 'rb'))
+similarity = pickle.load(open('data/similarity.pkl', 'rb'))
 movies = pd.DataFrame(movies_dict)
 
 def recommend(title):
@@ -38,4 +38,5 @@ if st.button("Recommend"):
         for movie in recommendations:
             st.write("- " + movie)
     else:
+
         st.write("Please enter a movie name.")
